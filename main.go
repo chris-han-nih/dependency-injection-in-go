@@ -7,17 +7,17 @@ import (
 )
 
 type Saver interface {
-	Save(data []byte) error
+	Save(data []byte) (int, error)
 }
 
-func SavePerson(person *Person, saver Saver) error {
+func SavePerson(person *Person, saver Saver) (int, error) {
 	err := person.validate()
 	if err != nil {
-		return err
+		return 0, err
 	}
 	bytes, err := person.encode()
 	if err != nil {
-		return err
+		return 0, err
 	}
 	return saver.Save(bytes)
 }
@@ -50,4 +50,9 @@ func LoadPerson(ID int, decodePerson func(data []byte) *Person) (*Person, error)
 		return nil, err
 	}
 	return decodePerson(bytes), nil
+}
+
+func loadPerson(ID int) ([]byte, error) {
+	// TODO: implement
+	return nil, errors.New("not implemented")
 }
