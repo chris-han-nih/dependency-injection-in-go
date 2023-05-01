@@ -10,19 +10,23 @@ type actions interface {
 	drive()
 }
 
-type Cart struct {
-	poweredActions
+type Car struct {
+	poweredVehicle
 }
 
-func (c Cart) start() {
-	c.poweredActions.startEngine()
+func (c Car) start() {
+	c.poweredVehicle.startEngine()
 }
 
 func (c Car) drive() {
 	// TODO: implement
 }
 
-type poweredActions interface{}
+type poweredVehicle struct{}
+
+func (p poweredVehicle) startEngine() {
+	// 일반적인 엔진 시작 코드
+}
 
 type Buggy struct{}
 
