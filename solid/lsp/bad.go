@@ -1,4 +1,4 @@
-package main
+package lsp
 
 func Go(vehicle actions) {
 	if sled, ok := vehicle.(*Sled); ok {
