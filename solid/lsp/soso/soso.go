@@ -1,4 +1,4 @@
-package lsp
+package soso
 
 func Go(vehicle actions) {
 	switch concrete := vehicle.(type) {

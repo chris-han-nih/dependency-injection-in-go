@@ -1,4 +1,4 @@
-package lsp
+package good
 
 func Go(vehicle actions) {
 	vehicle.start()
