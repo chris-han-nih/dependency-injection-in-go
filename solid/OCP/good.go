@@ -1,7 +1,10 @@
-package ocp
+package OCP
 
 import (
+	"errors"
 	"net/http"
+	"net/url"
+	"strconv"
 )
 
 func GetUserHandlerV2(resp http.ResponseWriter, req *http.Request) {
@@ -33,4 +36,17 @@ func DeleteUserHandlerV2(resp http.ResponseWriter, req *http.Request) {
 	}
 
 	deleteUser(userID)
+}
+
+func extractUserID(values url.Values) (int64, error) {
+	userID, err := strconv.ParseInt(values.Get("UserID"), 10, 64)
+	if err != nil {
+		return 0, err
+	}
+
+	if userID <= 0 {
+		return 0, errors.New("userID must be positive")
+	}
+
+	return userID, nil
 }

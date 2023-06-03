@@ -1,4 +1,4 @@
-package ocp
+package OCP
 
 import (
 	"net/http"
@@ -36,4 +36,16 @@ func DeleteUserHandlerV1(resp http.ResponseWriter, req *http.Request) {
 	}
 
 	deleteUser(userID)
+}
+func loadUser(userID int64) interface{} {
+	// TODO: implement
+	return nil
+}
+
+func deleteUser(userID int64) {
+	// TODO: implement
+}
+
+func outputUser(resp http.ResponseWriter, user interface{}) {
+	// TODO: implement
 }
