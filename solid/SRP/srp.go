@@ -1,4 +1,4 @@
-package srp
+package SRP
 
 import (
 	"fmt"
