@@ -42,3 +42,7 @@ type myDB interface {
 }
 ```
 이처럼 새롭게 정의된 'Thin Interface'를 사용할 경우, 함수 시그니터가 좀 더 명확해지고 유연해진다. 이것이 ISP의 핵심이다.
+
+### ISP는 DI와 어떤 관련이 있는가?
+ISP는 Interface를 하나로 묶지 않고 논리적인 구별을 통해 각 Interface가 하나의 기능을 갖도록 하는 것이다. DI에서 이러한 역할 Interface를
+사용함으로써 코드상에서 입력과 구체적인 구현이 분리된다.
