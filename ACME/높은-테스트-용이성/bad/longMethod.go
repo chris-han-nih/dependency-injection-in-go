@@ -12,7 +12,7 @@ type Person struct {
 	Phone string
 }
 
-func logMethod(resp http.ResponseWriter, req *http.Request) {
+func longMethod(resp http.ResponseWriter, req *http.Request) {
 	err := req.ParseForm()
 	if err != nil {
 		resp.WriteHeader(http.StatusPreconditionFailed)
